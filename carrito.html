@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styleCarrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./lightMode.css" class="theme">
+    <link rel="stylesheet" href="./darkMode.css"class="theme">
+    <title>Billi Burguer Hamburguesas</title>
+</head>
+
+<body>
+  <header class="container-fluid bg-dark position-sticky top-0">
+    <h1 class="text-white text-center">Bili Burguer</h1>
+    <ul
+      class="nav nav-pills mb-3 py-3 container justify-content-end"
+      id="pills-tab"
+      role="tablist"
+    >
+      </li>
+     
+      <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+     
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="pills-profile-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-profile"
+          type="button"
+          role="tab"
+          aria-controls="pills-profile"
+          aria-selected="false"
+          >Productos</a
+        >
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="pills-contact-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#pills-contact"
+          type="button"
+          role="tab"
+          aria-controls="pills-contact"
+          aria-selected="false"
+          >Carrito</a
+        >
+      </li>
+    </ul>
+      <h6>Dark Mode</h6>
+      <label class="switch">
+        <input type="checkbox" class="checkbox">
+        <span class="slider round"></span>
+      </label>
+
+  </header>
+
+  <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+    Producto Añadido al carrito!!
+    </div>
+    <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+      Producto removido!!
+    </div>
+    <div class="alert container position-sticky top-0 alert-danger vacio" role="alert">
+      EL CARRITO ESTA VACIO!!
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">GRACIAS POR SU COMPRA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>EL PRODUCTO SERA ENVIADO A LA BREVEDAD</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary cerrar" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  <div class="tab-content" id="pills-tabContent">
+    <div
+      class="tab-pane fade "
+      id="pills-home"
+      role="tabpanel"
+      aria-labelledby="pills-home-tab"   
+    >
+    
+    </div>
+    <div
+      class="tab-pane fade show active container"
+      id="pills-profile"
+      role="tabpanel"
+      aria-labelledby="pills-profile-tab"
+    >
+      <h2 class="h4 m-4 text-primary">Hamburguesas</h2>
+
+      <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+
+        <div class="col d-flex justify-content-center mb-4 ">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">G18</h5>
+            <img src="./imagenes/biliburguer.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Chedar Bacon y Barbacoa.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 420</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">SKS</h5>
+            <img src="./imagenes/hamburgesae.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Cheddar Lechuga y Tomate</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 400</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">THOMPSON</h5>
+            <img src="./imagenes/hamburguesah.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Doble Chedar Doble Baccon Huevo Revuelto con Verdeo y Barbacoa</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 440</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">M60</h5>
+            <img src="./imagenes/hambur3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Doble Cheddar y Cebolla Morada</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 440</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4 ">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">G18</h5>
+            <img src="./imagenes/biliburguer.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Chedar Bacon y Barbacoa</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 420</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">SKS</h5>
+            <img src="./imagenes/hamburgesae.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Cheddar Lechuga y Tomate</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 400</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">THOMPSON</h5>
+            <img src="./imagenes/hamburguesah.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Doble Chedar Doble Baccon Huevo Revuelto con Verdeo y Barbacoa</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 440</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">M60</h5>
+            <img src="./imagenes/hambur3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Pan Carne Doble Cheddar y Cebolla Morada</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 440</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h2 class="h4 m-4 text-primary">Bebidas</h2>
+
+      <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">SEVEN UP</h5>
+            <img src="./imagenes/bebidas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 80</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">COCA COLA</h5>
+            <img src="./imagenes/coca3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 85</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">PEPSI</h5>
+            <img src="./imagenes/pepsi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 60</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">FANTA</h5>
+            <img src="./imagenes/fanta.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 100</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h2 class="h4 m-4 text-primary">Postres</h2>
+
+      <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">FLAN</h5>
+            <img src="./imagenes/flan.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 240</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">OREO</h5>
+            <img src="./imagenes/oreo2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 270</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">CHOCOTORTA</h5>
+            <img src="./imagenes/chocotorta2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 310</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+          <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+            <h5 class="card-title pt-2 text-center text-primary">TIRAMISU</h5>
+            <img src="./imagenes/tiramisu10.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-white-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="text-primary">Precio: <span class="precio">$ 340</span></h5>
+              <div class="d-grid gap-2">
+              <button  class="btn btn-primary button">Añadir a Carrito</button>
+            </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+     <!-- ajax -->
+     <div class="container">
+      <button type="button" id="cartaFood" class="btn btn-danger mb-4">PLATOS DEL DIA</button>
+      <div class="row" id="food">
+       
+      </div>
+    </div>
+
+          <!-- <div class="input-group mb-3">
+            <button type="button" id="cartaFood" class="btn btn-outline-secondary">PLATO DEL DIA</button>
+            
+          </div>
+          
+       
+          <div id="food">
+  
+          </div> -->
+    </div>
+    
+       
+
+    
+    <div
+      class="tab-pane fade carrito"
+      id="pills-contact"
+      role="tabpanel"
+      aria-labelledby="pills-contact-tab"
+    >
+    <br>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr class="text-primary">
+          <th scope="col">#</th>
+          <th scope="col">Productos</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody class="cuerpoFilas">
+        
+      
+        
+      </tbody>
+    </table>
+    <br><br>
+    <div class="row mx-4">
+      <div class="col">
+        <h3 class="itemCarritoTotal text-black">Total: 0</h3>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <button id="comprar"  class="btn btn-success comprar"data-bs-toggle="modal" data-bs-target="#exampleModal">COMPRAR</button>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <button id="vaciar"  class="btn btn-warning comprar">VACIAR</button>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  
+
+  <footer class="bg-dark p-3 mt-5">
+    <p class="text-center m-0 text-muted">©2021 Bili Burguer
+      Todos los derechos reservados</p>
+  </footer>
+
+
+
+    
+    <script src="./proyecto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
