@@ -1,6 +1,7 @@
 body{
     background-color: #110f0fea;
   }
+
   header, .alert{
     z-index: 100;
   }
