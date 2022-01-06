@@ -6,49 +6,6 @@ let carrito = []
 //   btn.addEventListener('click', addToCarritoItem)
   $(".button").click((e) => { addToCarritoItem(e) });
 
-//   class Hamburguesas{
-//     constructor(type, title, precio){
-//       this.type= type;
-//       this.title= title;
-//       this.precio= precio;
-      
-//     }
-//   }
-//   class Bebidas{
-//     constructor(type, title, precio){
-//       this.type= type;
-//       this.title= title;
-//       this.precio= precio;
-      
-//     }
-//   }
-//   class Postres{
-//     constructor(type, title, precio){
-//       this.type= type;
-//       this.title= title;
-//       this.precio= price;
-    
-//   }
-// }
-
-//   let hamburguesas = [
-//     {type:"hamburguesa", title:"sks", price:420},
-//     {type:"hamburguesa", title:"sks", price:420},
-//     {type:"hamburguesa", title:"sks", price:420}
-//   ]
-//   let bebidas = [
-//     {type:"bebida", title:"pepsi", price:80,},
-//     {type:"bebida", title:"pepsi", price:80,},
-//     {type:"bebida", title:"pepsi", price:80}
-//   ]
-//   let postres = [
-//     {type:"postre", title:"oreo", price:200},
-//     {type:"postre", title:"oreo", price:200},
-//     {type:"postre", title:"oreo", price:200}
-//   ]
-
-
-
 function addToCarritoItem(e){
   const button = e.target
   const item = button.closest('.card')
@@ -136,7 +93,6 @@ function CarritoTotal(){
   
   addLocalStorage()
 
-
 }
 
 function removeItemCarrito(e){
@@ -197,31 +153,7 @@ window.onload = function(){
   }
 }
 
-
-// let comprar = document.querySelector('.comprar');
-// comprar.addEventListener("click", saludar);
-// $(".comprar").on("click", saludar)
-// function saludar () {
-//   const alert = document.querySelector('.saludo')
-//   if (alert != null) {
-//   setTimeout( function(){
-//       alert.classList.add('saludo')
-//     }, 2000)
-//       alert.classList.remove('saludo');
-//   }   
-// }
-
-//DESAFIO ANIMACIONES
-
-// $("document").ready(function () {
-//   $("#comprar").click(function () {
-//     $(".saludo").show(2000)
-//   });
-//   $(".finalizar").click(function() {
-//     $(".saludo").hide(2000)
-//   });
-// })
-
+//ANIMACIONES
 $("h1").animate({
   height: "20px",
   
@@ -231,7 +163,7 @@ $("h1").animate({
 
 $("h1").slideUp( 300 ).slideDown( 300 )
 
-// desafio ajax
+// ajax
 
 const mealUrl = "https://www.themealdb.com/api/json/v1/1/search.php?f=b";
 
@@ -277,21 +209,26 @@ $(".checkbox").click(function(){
   }
 });
 
-//alertas carrito
-  $("#comprar").click(function () {
-    if(carrito.length > 0) {
-      $("#exampleModal").show(2000) 
-  }else{
-    alert("vacio")
-  }
-});
-//finalizar compra
-  $(".finalizar").click(function() {
-    $(".saludo").hide(2000)
-  });
   //boton cerrar
   $(".cerrar").click(function () {
     carrito = []
     renderizarCarrito()
   })
 
+  //boton comprar
+  const modalBody = $('#modalBody');
+
+  const finalizarCompra = () => {
+    if(carrito.length > 0){
+      modalBody.html(`<h3>GRACIAS POR SU COMPRA</h3>
+                      <p>EL PRODUCTO SERA ENVIADO A LA BREVEDAD</p>
+    `);
+    }else{
+      modalBody.html(`<h3>SU CARRITO ESTA VACIO</h3>
+                      <p>AGREGUE PRODUCTOS AL CARRITO PARA PODER REALIZAR UNA COMPRA</p>
+    `);
+  }
+}
+
+const compra = $('#comprar')[0];
+compra.onclick = () => { finalizarCompra() };
